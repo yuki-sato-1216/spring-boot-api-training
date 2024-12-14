@@ -6,7 +6,7 @@
 
 1. 自身のgithubページから新規リポジトリを作成する
 2. リポジトリ名を入力後、そのまま「Create Repository」ボタンを押下し登録する
-    * `spring-boot-api-training`
+    * リポジトリ名: `spring-boot-api-training`
 
 ### 作業場所
 
@@ -28,10 +28,10 @@ rm -rf .git
 git init
 # コミット対象とするためステージングへ追加
 git add .
-# gitの差分チェック（差分がある場合は講師に伝えてください）
+# gitの差分チェック（差分データが正しいか確認する）
 git status
-# 空コミットを許容してコミット作成
-git commit --allow-empty -m "first commit"
+# コミット作成
+git commit -m 'first commit'
 # mainブランチを作成
 git branch -M main
 # mainブランチが作成されているか確認
@@ -44,15 +44,19 @@ git push -u origin main
 
 ### JDKの設定
 
+※コマンド: `java -version`を実行し、適切なバージョンが表示されればJDKの設定はスキップしてよい
+
 1. JDK インストール
     * 対象バージョン: 17
     * Oracle: https://www.oracle.com/java/technologies/downloads/?er=221886
         * Intel Macと、M1やM2は異なるインストーラーを使用するため適切なものをダウンロードしインストールする
 2. インストール済みのJDKのパスの確認
-    * `/usr/libexec/java_home -V`
+    * コマンド: `/usr/libexec/java_home -V`
         * インストール済みのものがある場合、以下のようなjdkの一覧が表示される
         * jdkにも色々種類があるが、今回はOracleのJDKを使用する
             * 補足: Eclipse（Pleiades All in One）をダウンロード済みの場合は基本的にはJDKをダウンロードする必要はない
+
+【実行結果】
 
 ```log
 /usr/libexec/java_home -V
@@ -71,12 +75,14 @@ Matching Java Virtual Machines (10):
 ```
 
 3. jdkのパスの設定
-    * `ls ~/.zshrc` で `.zshrc` ファイルの確認
+    * コマンド: `ls ~/.zshrc` で `.zshrc` ファイルの確認
         * 存在しない場合 `touch ~/.zshrc` で新規作成
-    * `view ~/.zshrc` で中身を確認
-    * `i` を押下して、INSERTモードへ変更する
-        * 十字キーで移動し、以下【.zshrc】の内容を入力（貼り付けでもOK）
-    * `esc` を押下し、`:wq!` と入力して `Enter` を押下し保存する
+    * コマンド: `view ~/.zshrc` で中身を確認
+    * キー: `i` を押下して、INSERTモードへ変更する
+        * 十字キーで移動し、以下の【.zshrc】の内容を入力（貼り付けでもOK）
+        * 他の設定が書かれている場合は、他の設定を書き換えないように注意する
+    * キー: `esc` を押下し、`:wq!` と入力して `Enter` を押下し保存する
+        * 注意: `:wq!` はコピペではなく手入力で行うこと
 
 【.zshrc】
 以下2行を追加する
@@ -87,9 +93,11 @@ export PATH=$JAVA_HOME/bin:$PATH
 ```
 
 4. 設定の適用
-    * `source ~/.zshrc`
+    * コマンド: `source ~/.zshrc`
+       * 設定ファイルを保存しただけでは適用されないため、上記コマンドを実行する
 5. Java バージョン確認
-    * `java -version`
+    * コマンド: `java -version`
+       * javaバージョンが表示されればOK
 
 
 ## VSCodeの設定
