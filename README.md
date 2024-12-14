@@ -2,6 +2,40 @@
 
 ## 環境構築
 
+### 作業場所
+
+作業場所へ移動する
+
+```sh
+cd 任意の作業場所
+```
+
+### Git設定
+
+```sh
+# プロジェクトに移動
+cd spring-boot-api-training
+
+# git履歴削除
+rm -rf .git
+# git初期化
+git init
+# コミット対象とするためステージングへ追加
+git add .
+# gitの差分チェック（差分がある場合は講師に伝えてください）
+git status
+# 空コミットを許容してコミット作成
+git commit --allow-empty -m "first commit"
+# mainブランチを作成
+git branch -M main
+# mainブランチが作成されているか確認
+git branch
+# リモートと紐づけ
+git remote add origin https://github.com/自分gituhubのアカウント/spring-boot-api-training.git
+# リモートへプッシュ
+git push -u origin main
+```
+
 ### JDKの設定
 
 1. JDK インストール
@@ -33,7 +67,7 @@ Matching Java Virtual Machines (10):
 3. jdkのパスの設定
     * `ls ~/.zshrc` で `.zshrc` ファイルの確認
         * 存在しない場合 `touch ~/.zshrc` で新規作成
-    * `view .zshrc` で中身を確認
+    * `view ~/.zshrc` で中身を確認
     * `i` を押下して、INSERTモードへ変更する
         * 十字キーで移動し、以下【.zshrc】の内容を入力（貼り付けでもOK）
     * `esc` を押下し、`:wq!` と入力して `Enter` を押下し保存する
