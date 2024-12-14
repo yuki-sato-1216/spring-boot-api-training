@@ -35,7 +35,7 @@ Matching Java Virtual Machines (10):
         * 存在しない場合 `touch ~/.zshrc` で新規作成
     * `view .zshrc` で中身を確認
     * `i` を押下して、INSERTモードへ変更する
-        * 十字キーで移動し、以下を入力（貼り付けでもOK）
+        * 十字キーで移動し、以下【.zshrc】の内容を入力（貼り付けでもOK）
     * `esc` を押下し、`:wq!` と入力して `Enter` を押下し保存する
 
 【.zshrc】
@@ -50,6 +50,40 @@ export PATH=$JAVA_HOME/bin:$PATH
     * `source ~/.zshrc`
 5. Java バージョン確認
     * `java -version`
+
+
+## VSCodeの設定
+
+### Extension
+
+VSCodeの拡張機能から以下を検索してインストールする
+
+* 必須
+    * Extension Pack for Java
+    * Spring Boot Extension Pack
+    * Gradle for Java
+* 任意
+    * Japanese Language Pack for Visual Studio Code
+    * Trailing Spaces
+    * Better Comments
+
+## 実行
+
+Javaの起動を待ち、実行する
+
+【Java Ready】
+
+以下のようにJavaの読み込みが完了したら実行する
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/296e897c-7946-a29d-32bc-7f67c1fd3563.png" width="800">
+
+
+【実行】
+
+1. Spring Boot Dashboardを選択する
+2. APPS配下にある api-demo の右側「▷」ボタンを押下する
+
+<img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/93007f1d-ddf5-abe5-7423-7b2c803bfe40.png" width="800">
 
 ## Tips
 
