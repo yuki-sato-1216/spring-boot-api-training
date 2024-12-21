@@ -36,4 +36,10 @@ public class UserService implements UserServiceInterface {
         // .map(entity -> mapper.mapToDto(entity))
         // .collect(Collectors.toList());
     }
+
+    @Override
+    public UserResponseDto findUserById(Long id) {
+        var entity = repository.findById(id).get();
+        return mapper.mapToDto(entity);
+    }
 }
