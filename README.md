@@ -2,49 +2,72 @@
 
 ## 環境構築
 
-## Git リポジトリの作成
+### 1. VSCodeの準備
 
-1. 自身のgithubページから新規リポジトリを作成する
-2. リポジトリ名を入力後、そのまま「Create Repository」ボタンを押下し登録する
-    * リポジトリ名: `spring-boot-api-training`
+以下のリンクからVSCodeをダウンロードし、インストールする
 
-### 作業場所
+* VSCode
+    * https://code.visualstudio.com/
 
-作業場所へ移動する
+### Extensionの追加
+
+VSCodeを開き、拡張機能から以下を検索してインストールする
+
+* 必須
+    * Extension Pack for Java
+    * Spring Boot Extension Pack
+    * Gradle for Java
+* 任意
+    * Japanese Language Pack for Visual Studio Code
+    * Trailing Spaces
+    * Better Comments
+
+### 2. Gitリポジトリのインポート
+
+* 以下の添付画像の手順に従い、自身のgithubページからリポジトリのインポートを行う
+    * リポジトリURL:
+        * `https://github.com/yuki-sato-1216/spring-boot-api-training`
+    * リポジトリ名:
+        * `spring-boot-api-training`
+            * 重複するリポジトリが存在する場合、 末尾に数字（`-2`）やアルファベット（`-a`）をなど入力してください
+
+![procesure_import_1.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/e8229d78-dc07-151a-82f4-52796fba6257.png)
+
+![procesure_import_2.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/56a33ae5-a81d-8726-41b5-40700666f562.png)
+
+### 3. 作業ディレクトリの作成
+
+例）`/Vantan/Workspace` 直下にリポジトリを置く場合
 
 ```sh
-cd 任意の作業場所
+# 任意のディレクトリに作業用ディレクトリを作成 & 移動
+# - 任意のディレクトリ = /Users/ユーザー名/Vantan/Workspace
+mkdir 任意のディレクトリ && cd 任意のディレクトリ
 ```
 
-### Git設定
+### 4. ブランチのチェックアウト
+
+初期状態では3つのブランチが存在するため、以下の手順に従いそれぞれのブランチのチェックアウトを行ってください
 
 ```sh
-# プロジェクトに移動
+# 自身の現在のディレクトリを確認し、作業場所にいない場合は移動する
+pwd
+
+# プロジェクトのディレクトリへ移動
 cd spring-boot-api-training
 
-# git履歴削除
-rm -rf .git
-# git初期化
-git init
-# コミット対象とするためステージングへ追加
-git add .
-# gitの差分チェック（差分データが正しいか確認する）
+# 1. gitの差分チェック（余計な差分などがないか念の為確認する）
 git status
-# コミット作成
-git commit -m 'first commit'
-# mainブランチを作成
-git branch -M main
-# mainブランチが作成されているか確認
+# 2. developブランチとfeature/api-get-userのチェックアウト
+git checkout develop
+git checkout feature/api-get-user
+# 3. ブランチの確認
 git branch
-# リモートと紐づけ
-git remote add origin https://github.com/自分gituhubのアカウント/spring-boot-api-training.git
-# リモートへプッシュ
-git push -u origin main
 ```
 
-### JDKの設定
+### 5. JDKの設定
 
-※コマンド: `java -version`を実行し、適切なバージョンが表示されればJDKの設定はスキップしてよい
+**※コマンド: `java -version`を実行し、適切なバージョンが表示されればJDKの設定はスキップしてよい**
 
 1. JDK インストール
     * 対象バージョン: 17
@@ -99,7 +122,6 @@ export PATH=$JAVA_HOME/bin:$PATH
     * コマンド: `java -version`
        * javaバージョンが表示されればOK
 
-
 ## VSCodeの設定
 
 ### Extension
@@ -131,6 +153,8 @@ Javaの起動を待ち、実行する
 1. Spring Boot Dashboardを選択する
 2. APPS配下にある api-demo の右側「▷」ボタンを押下する
 
+※api-demoが表示されない場合、使用するJavaのバージョンとプロジェクトのJavaのバージョンが合っていない可能性があるため、改めて双方のJavaバージョンを確認すること
+
 <img src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/93007f1d-ddf5-abe5-7423-7b2c803bfe40.png" width="800">
 
 ## Tips
@@ -140,4 +164,4 @@ Javaの起動を待ち、実行する
 * システム内の設定処理を行うことができるインターフェース
     * 今回はJavaを利用するためのJDKのパス設定を行うために利用
 * macOS Catalina（10.15）以降のデフォルトシェル、それまではBashと呼ばれる下位互換のシェルが普及していた
-* MacがM1やM2の場合、「.bashrc」ではなく、「.zshrc」こちらがデフォルト
+* MacがM1やM2の場合、「.bashrc」ではなく、「.zshrc」がデフォルト
