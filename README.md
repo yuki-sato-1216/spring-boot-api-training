@@ -31,9 +31,24 @@ VSCodeを開き、拡張機能から以下を検索してインストールす�
         * `spring-boot-api-training`
             * 重複するリポジトリが存在する場合、 末尾に数字（`-2`）やアルファベット（`-a`）をなど入力してください
 
-![procesure_import_1.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/e8229d78-dc07-151a-82f4-52796fba6257.png)
+1. メニューを開く
 
-![procesure_import_2.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/56a33ae5-a81d-8726-41b5-40700666f562.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/e8229d78-dc07-151a-82f4-52796fba6257.png">
+
+2. インポート内容を入力する
+
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3725756/56a33ae5-a81d-8726-41b5-40700666f562.png">
+
+3. インポート完了まで待機する
+
+押下後はページが変わり、ローディング中となる
+（1分ほど待機する）
+
+<img width="800" alt="import_loading" src="https://github.com/user-attachments/assets/a073b19a-4b7d-440c-81b3-39c7a8344480" />
+
+ローディングが完了し、チェックマークが表示されたらインポート完了
+
+<img width="800" alt="import_success" src="https://github.com/user-attachments/assets/462d855d-3535-42be-80fe-10b9a7a7cd64" />
 
 ### 3. 作業ディレクトリの作成
 
